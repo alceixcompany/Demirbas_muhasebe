@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FiMail, FiPhone, FiShare2, FiGlobe } from 'react-icons/fi';
 
@@ -19,7 +20,16 @@ const Footer = () => {
           
           {/* Logo ve Hakkında */}
           <div className="space-y-6 text-center md:text-left">
-            <h2 className="text-2xl font-bold text-[#1a1a1a]">Demirbaş</h2>
+            <Link href="/" className="inline-block">
+              <div className="relative h-10 w-40 sm:h-12 sm:w-48">
+                <Image
+                  src="/demirbaslogo.png"
+                  alt="Demirbaş Muhasebe Logo"
+                  fill
+                  className="object-contain object-left md:object-left"
+                />
+              </div>
+            </Link>
             <p className="text-sm leading-relaxed text-[#5f6970] max-w-xs mx-auto md:mx-0">
               Küresel standartlarda mali müşavirlik ve stratejik danışmanlık hizmetleri sunan güvenilir çözüm ortağınız.
             </p>
@@ -58,7 +68,7 @@ const Footer = () => {
         {/* Alt Bilgi */}
         <div className="border-t border-gray-200 py-10 text-center">
           <p className="text-xs text-gray-400">
-            © 2024 Demirbaş. Tüm hakları saklıdır.
+            © 2026 Demirbaş. Created by <a href="https://www.alceix.com/" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[var(--lale-gold)] transition-colors">Alceix</a>
           </p>
         </div>
       </div>

@@ -260,7 +260,7 @@ const ContactPage = () => {
               <div className="space-y-8">
                 {[
                   { icon: FiPhone, title: 'Telefon', value: '05xx xxx xx xx', sub: 'Müşteri hizmetleri' },
-                  { icon: FiMail, title: 'E-posta', value: 'info@demirbas.com', sub: 'Destek ve Teklif' },
+                  { icon: FiMail, title: 'E-posta', value: 'info@lale.com', sub: 'Destek ve Teklif' },
                   { icon: FiMapPin, title: 'Konum', value: 'Bahçelievler, İstanbul', sub: 'Ofis Adresi' },
                   { icon: FiClock, title: 'Çalışma Saatleri', value: '09:00 - 18:00', sub: 'Hafta içi' },
                 ].map((item) => (
