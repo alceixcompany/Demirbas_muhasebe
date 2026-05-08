@@ -28,43 +28,12 @@
 
   .home-flow,
   .page-flow {
-    @apply relative isolate;
-    background: #ffffff;
-  }
-
-  .home-flow::before,
-  .page-flow::before {
-    content: '';
-    @apply pointer-events-none absolute inset-0;
-    background:
-      radial-gradient(circle at 18% 14%, rgba(242, 140, 40, 0.08), transparent 26%),
-      radial-gradient(circle at 82% 20%, rgba(255, 177, 94, 0.10), transparent 20%),
-      radial-gradient(circle at 24% 54%, rgba(200, 109, 34, 0.06), transparent 30%),
-      radial-gradient(circle at 78% 72%, rgba(242, 140, 40, 0.05), transparent 22%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.98));
+    @apply relative isolate bg-white;
   }
 
   .home-flow > section,
   .page-flow > * {
     @apply relative z-[1];
-  }
-
-  .home-flow > section + section,
-  .page-flow > * + * {
-    margin-top: 1.5rem;
-    padding-top: 0;
-  }
-
-  @media (min-width: 768px) {
-    .home-flow > section + section,
-    .page-flow > * + * {
-      margin-top: 2rem;
-    }
-  }
-
-  .home-flow > section + section::before,
-  .page-flow > * + *::before {
-    background: none;
   }
 
   .home-flow .lale-dark-section::after,

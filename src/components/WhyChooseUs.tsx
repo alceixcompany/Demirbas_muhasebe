@@ -1,70 +1,81 @@
+'use client'
 import React from 'react';
-import {
-  FiEye,
-  FiLock,
-  FiShield,
-  FiStar,
-  FiZap,
-} from 'react-icons/fi';
+import { motion } from 'framer-motion';
+import { FiCheckCircle } from 'react-icons/fi';
 
 const WhyChooseUs = () => {
+  const points = [
+    {
+      title: 'Uzman Deneyimi',
+      description: 'Yılların getirdiği sektörel tecrübe ile en karmaşık mali sorunlarınıza çözüm üretiyoruz.'
+    },
+    {
+      title: 'Şeffaf Süreçler',
+      description: 'Tüm operasyonlarımızda tam şeffaflık ve düzenli raporlama prensibiyle çalışıyoruz.'
+    },
+    {
+      title: 'Dijital Dönüşüm',
+      description: 'En yeni teknolojileri kullanarak muhasebe süreçlerinizi dijital çağa taşıyoruz.'
+    }
+  ];
+
   return (
-    <section id="hakkimizda" className="bg-geometric py-24">
+    <section id="neden-biz" className="bg-[#f8fafc] py-24 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-7 lg:px-10">
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl font-bold tracking-[-0.02em] text-[var(--lale-anthracite)] sm:text-5xl">
-            Neden Demirbaş Muhasebe?
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#5a666d]">
-            Değerlerimiz ve süreç disiplinimiz, uzun vadeli iş ortaklıklarının temelini oluşturur.
-          </p>
-        </div>
-
-        <div className="grid h-auto grid-cols-1 gap-6 md:grid-cols-4 md:grid-rows-2 md:[grid-auto-rows:minmax(0,1fr)]">
-          <div className="rounded-xl border border-[rgba(139,114,99,0.18)] bg-white p-10 shadow-sm md:col-span-2">
-            <FiEye className="mb-6 h-12 w-12 text-[var(--lale-gold)]" />
-            <h3 className="text-2xl font-bold text-[var(--lale-anthracite)]">Şeffaflık</h3>
-            <p className="mt-4 text-base leading-7 text-[#5a666d]">
-              Tüm süreçlerde açık iletişim, net raporlama ve görünür takvim yapısı
-              ile çalışıyoruz. Gizli maliyetler değil, ölçülebilir sonuçlar sunuyoruz.
-            </p>
-          </div>
-
-          <div className="rounded-xl bg-[var(--lale-gold)] p-10 text-center text-white shadow-lg md:col-span-1">
-            <FiZap className="mx-auto mb-6 h-12 w-12" />
-            <h3 className="text-2xl font-bold">Hız</h3>
-            <p className="mt-4 text-sm leading-6 text-white/85">
-              Dijital akışlarla karar verme ve onay süreçlerinizi yavaşlatmadan ilerliyoruz.
-            </p>
-          </div>
-
-          <div className="rounded-xl bg-[#1e333c] p-10 text-white md:col-span-1 md:row-span-2">
-            <FiLock className="mb-8 h-14 w-14 text-[var(--lale-gold)]" />
-            <h3 className="text-3xl font-bold">Güvenlik</h3>
-            <p className="mb-4 mt-4 text-sm leading-7 text-white/72">
-              Verileriniz yüksek hassasiyetle işlenir. Finansal gizlilik ve bilgi
-              güvenliği, tüm işleyişimizin temel parçasıdır.
-            </p>
-            <div className="mt-8 h-1 w-full overflow-hidden rounded bg-white/20">
-              <div className="h-full w-full bg-[var(--lale-gold)]" />
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          
+          {/* Sol: Liste */}
+          <div className="flex-1 space-y-12">
+            <h2 className="text-4xl font-bold text-[#1a1a1a]">Neden Demirbaş?</h2>
+            
+            <div className="space-y-8">
+              {points.map((point, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex gap-5"
+                >
+                  <div className="flex-shrink-0 mt-1">
+                    <FiCheckCircle className="h-6 w-6 text-[var(--lale-gold)]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">{point.title}</h3>
+                    <p className="text-[#5f6970] leading-relaxed max-w-md">
+                      {point.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
 
-          <div className="rounded-xl border border-[rgba(139,114,99,0.18)] bg-white p-10 shadow-sm md:col-span-3">
-            <div className="flex flex-col gap-8 md:flex-row md:items-center">
-              <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-[#ffdcc6] text-[var(--lale-gold)]">
-                <FiShield className="h-12 w-12" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-[var(--lale-anthracite)]">Uzmanlık</h3>
-                <p className="mt-4 text-base leading-7 text-[#5a666d]">
-                  Farklı sektörlerdeki deneyimimizle firmanıza özel mali stratejiler
-                  geliştiriyor, mevzuat ve operasyon tarafını aynı anda gözeten
-                  profesyonel bir çalışma modeli sunuyoruz.
-                </p>
-              </div>
-            </div>
+          {/* Sağ: İstatistik Blokları */}
+          <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="aspect-square flex flex-col items-center justify-center bg-[var(--lale-gold)] rounded-[2.5rem] text-white p-8 shadow-xl shadow-[var(--lale-gold)]/20"
+            >
+              <span className="text-6xl font-extrabold mb-3">15+</span>
+              <span className="text-lg font-medium opacity-90">Yıllık Tecrübe</span>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="aspect-square flex flex-col items-center justify-center bg-white rounded-[2.5rem] border border-gray-100 p-8 shadow-xl shadow-gray-200/50"
+            >
+              <span className="text-6xl font-extrabold text-[var(--lale-gold)] mb-3">500+</span>
+              <span className="text-lg font-medium text-[#1a1a1a]">Mutlu Müşteri</span>
+            </motion.div>
           </div>
+
         </div>
       </div>
     </section>
