@@ -19,7 +19,7 @@ const AboutPage = () => {
       <section className="relative flex min-h-[450px] items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/banner/hero_bg_home.png"
+            src="/banner/about_hero.png"
             alt="Demirbaş Muhasebe Hakkımızda"
             fill
             priority
